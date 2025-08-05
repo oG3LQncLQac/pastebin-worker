@@ -1,0 +1,23 @@
+{
+  "name": "pastebin-worker",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "xiadd",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "wrangler build",
+    "initdb:remote": "wrangler d1 execute DB --file src/schema.sql --remote",
+    "initdb:local": " wrangler d1 execute DB --file src/schema.sql --local"
+  },
+  "devDependencies": {
+    "@cloudflare/kv-asset-handler": "^0.3.0",
+    "wrangler": "^3.53.1"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20240502.0",
+    "hono": "^4.5.11",
+    "nanoid": "^4.0.0"
+  }
+}
